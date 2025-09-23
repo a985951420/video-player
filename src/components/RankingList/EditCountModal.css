@@ -1,0 +1,64 @@
+.edit-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 24px 20px 18px 20px;
+  min-width: 240px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 18px;
+}
+
+.edit-modal-input {
+  width: 80px;
+  font-size: 16px;
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.edit-modal-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.edit-modal-btn {
+  padding: 6px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #e0e0e0;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-modal-btn.confirm {
+  background: linear-gradient(90deg,#1a73e8,#4fc3f7);
+  color: #fff;
+}
+
+.edit-modal-btn:active {
+  background: #bdbdbd;
+}

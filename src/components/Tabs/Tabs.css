@@ -1,0 +1,135 @@
+.tabs-container {
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tabs-header {
+  display: flex;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-radius: 16px 16px 0 0;
+  padding: 0 16px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 20px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1976d2, #4fc3f7);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-button.active {
+  color: #1976d2;
+  font-weight: 700;
+}
+
+.tab-button.active::after {
+  width: 80%;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+}
+
+.tab-button:hover {
+  background: rgba(25, 118, 210, 0.05);
+  color: #1976d2;
+}
+
+.tab-button:hover::after {
+  width: 50%;
+}
+
+.tabs-content {
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .tabs-header {
+    padding: 0 12px;
+  }
+  
+  .tab-button {
+    font-size: 15px;
+    padding: 18px 12px;
+    letter-spacing: 0.3px;
+  }
+  
+  .tabs-content {
+    padding: 20px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tabs-header {
+    padding: 0 8px;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .tab-button {
+    font-size: 14px;
+    padding: 16px 8px;
+    font-weight: 500;
+  }
+  
+  .tabs-content {
+    padding: 16px 12px;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .tab-button.active::after {
+    width: 90%;
+  }
+  
+  .tab-button:hover::after {
+    width: 60%;
+  }
+}
