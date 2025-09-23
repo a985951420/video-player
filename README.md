@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# React 视频播放器项目
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是一个基于 React 开发的现代化视频播放器组件，支持播放控制、进度保存、全屏切换等功能。该组件采用响应式设计，可在不同设备上提供良好的用户体验。
 
-## Available Scripts
+## 🚀 项目特点
 
-In the project directory, you can run:
+- **完整的播放控制**：播放/暂停、进度条拖动、音量调节、全屏切换
+- **自动保存播放进度**：使用 localStorage 保存每个视频的播放位置，下次观看时自动续播
+- **双击全屏**：支持双击视频进入/退出全屏模式
+- **响应式设计**：适配不同屏幕尺寸的设备
+- **触控支持**：兼容移动设备的触摸操作
+- **自动播放选项**：可配置是否自动开始播放
 
-### `npm start`
+## 🛠️ 技术栈
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 19.1.1
+- JavaScript (ES6+)
+- CSS3
+- Create React App
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 安装与运行
 
-### `npm test`
+### 前置要求
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (>= 14.0.0)
+- npm (>= 6.0.0) 或 yarn
 
-### `npm run build`
+### 安装依赖
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+# 或使用 yarn
+# yarn install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 开发模式
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+运行开发服务器，访问 [http://localhost:3000](http://localhost:3000) 查看应用
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 构建生产版本
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+构建用于生产环境的应用程序，输出到 `build` 目录
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 运行测试
 
-## Learn More
+执行测试套件
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 核心功能详解
 
-### Code Splitting
+### 1. 播放控制
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 单击视频或播放按钮切换播放状态
+- 拖动进度条跳转到视频任意位置
+- 调节音量滑块控制音量大小
+- 双击视频区域进入/退出全屏模式
 
-### Analyzing the Bundle Size
+### 2. 播放进度保存
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 自动保存每个视频的播放进度到 localStorage
+- 播放/暂停时自动保存当前进度
+- 每3秒自动保存一次播放进度
+- 页面卸载或组件卸载时保存最后进度
+- 切换视频时不会混淆播放进度
 
-### Making a Progressive Web App
+### 3. 智能控件显示
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- 鼠标移入视频区域显示控件
+- 视频播放时鼠标移出隐藏控件
+- 视频暂停时始终显示控件
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📁 项目结构
