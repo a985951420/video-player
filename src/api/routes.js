@@ -33,5 +33,5 @@ export const API = {
 // 工具函数：拼接完整的视频URL
 export const getFullVideoUrl = (path) => {
   if (!path) return '';
-  return `${BASE_URL}${path}`;
+  return `${BASE_URL}/${path}`;
 };

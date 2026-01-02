@@ -26,7 +26,7 @@ function App() {
           views: v.views || "",
           duration: v.duration || "",
           uploadDate: v.uploadDate || "2023-09-20",
-          src: getFullVideoUrl("/" + v.url), // 使用工具函数获取完整URL
+          src: getFullVideoUrl(v.url), // 使用工具函数获取完整URL
         }));
         const latest = (data.latest || []).map((v) => ({
           ...v,
@@ -34,7 +34,7 @@ function App() {
           views: v.views || "",
           duration: v.duration || "",
           uploadDate: v.uploadDate || "2023-09-20",
-          src: getFullVideoUrl("/" + v.url), // 使用工具函数获取完整URL
+          src: getFullVideoUrl(v.url), // 使用工具函数获取完整URL
         }));
         setHotState(hot);
         setLatestState(latest);
